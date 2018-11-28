@@ -4,19 +4,11 @@ window.jQuery = function (nodeOrSelector) {
     nodes.html = function () { }
     return nodes
 }
-window.jQuery.ajax = function (options) {//函数名一般叫 options
-    let url 
-    if(arguments.lkength === 1){
-        url = arguments[0]
-    }else if(arguments.length === 2){
-        url = arguments[0]
-        options = arguments[1]
-    }//如何在 options 里面传两种不同类型的参数
-    let method = options.method
-    let body = options.body
-    let successFn = options.successFn
-    let failFn = options.failFn
-    let headers = options.headers
+window.jQuery.ajax = function ({url, method, body, successFn, failFn, headers}) {//函数名一般叫 options
+    
+
+    //ES6 解构赋值
+    //let {url, method, body, successFn, failFn, headers}=options
     
 
     let request = new XMLHttpRequest()
